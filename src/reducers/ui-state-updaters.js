@@ -360,7 +360,7 @@ export const setExportDataTypeUpdater = (state, {payload: dataType}) => ({
  * @mixin uiStateUpdaters.setExportFilteredUpdater
  * @param {Object} state - `uiState`
  * @param {Object} action
- * @param {bollean} action.payload
+ * @param {boolean} action.payload
  * @public
  */
 export const setExportFilteredUpdater = (state, {payload: filtered}) => ({
