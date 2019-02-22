@@ -44,7 +44,10 @@ import {
   setExportSelectedDatasetUpdater,
   setExportDataTypeUpdater,
   setExportFilteredUpdater,
-  setExportDataUpdater
+  setExportDataUpdater,
+
+  // export HTML
+  setExportMapboxAccessTokenUpdater
 } from './ui-state-updaters';
 
 const actionHandler = {
@@ -67,7 +70,9 @@ const actionHandler = {
   [ActionTypes.SET_EXPORT_SELECTED_DATASET]: setExportSelectedDatasetUpdater,
   [ActionTypes.SET_EXPORT_DATA_TYPE]: setExportDataTypeUpdater,
   [ActionTypes.SET_EXPORT_FILTERED]: setExportFilteredUpdater,
-  [ActionTypes.SET_EXPORT_DATA]: setExportDataUpdater
+  [ActionTypes.SET_EXPORT_DATA]: setExportDataUpdater,
+
+  [ActionTypes.SET_EXPORT_MAPBOX_ACCESS_TOKEN]: setExportMapboxAccessTokenUpdater
 };
 
 /* Reducer */

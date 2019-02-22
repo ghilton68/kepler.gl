@@ -39,7 +39,8 @@ const {
   TOGGLE_SIDE_PANEL,
   TOGGLE_MAP_CONTROL,
   ADD_NOTIFICATION,
-  REMOVE_NOTIFICATION
+  REMOVE_NOTIFICATION,
+  SET_EXPORT_MAPBOX_ACCESS_TOKEN
 } = ActionTypes;
 
 // second argument of createAction is expected to be payloadCreator or undefined
@@ -63,7 +64,9 @@ const [
   setExportSelectedDataset,
   setExportDataType,
   setExportFiltered,
-  setExportData
+  setExportData,
+  // export HTML
+  setExportMapboxAccessToken
 ] = [
   TOGGLE_SIDE_PANEL,
   TOGGLE_MODAL,
@@ -82,7 +85,8 @@ const [
   SET_EXPORT_SELECTED_DATASET,
   SET_EXPORT_DATA_TYPE,
   SET_EXPORT_FILTERED,
-  SET_EXPORT_DATA
+  SET_EXPORT_DATA,
+  SET_EXPORT_MAPBOX_ACCESS_TOKEN
 ].map(a => createAction(a));
 
 export {
@@ -90,5 +94,6 @@ export {
   toggleMapControl, openDeleteModal, addNotification, removeNotification,
   setExportData, setRatio, setResolution, toggleLegend,
   startExportingImage, setExportImageDataUri, cleanupExportImage,
-  setExportSelectedDataset, setExportDataType, setExportFiltered
+  setExportSelectedDataset, setExportDataType, setExportFiltered,
+  setExportMapboxAccessToken
 };

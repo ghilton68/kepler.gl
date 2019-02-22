@@ -96,7 +96,25 @@ export const DEFAULT_EXPORT_DATA = {
   data: false // this is used in modal config export
 };
 
+/**
+ * @constant
+ * @type {Array}
+ */
 export const DEFAULT_NOTIFICATIONS = [];
+
+/**
+ * @constant
+ * @type {Object}
+ * @property {string} exportMapboxAccessToken - Default: null,
+ * @property {string} dataType - Default: 'csv',
+ * @property {boolean} filtered - Default: true,
+ * @property {boolean} config - deprecated
+ * @property {boolean} data - used in modal config expor. Default: falset
+ * @public
+ */
+export const DEFAULT_EXPORT_HTML = {
+  exportMapboxAccessToken: ''
+};
 
 /**
  * Default initial `uiState`
@@ -122,6 +140,8 @@ export const INITIAL_UI_STATE = {
   exportImage: DEFAULT_EXPORT_IMAGE,
   // export data modal ui
   exportData: DEFAULT_EXPORT_DATA,
+  // html export
+  exportHtml: DEFAULT_EXPORT_HTML,
   // map control panels
   mapControls: DEFAULT_MAP_CONTROLS,
   // ui notifications
@@ -377,11 +397,25 @@ export const setExportFilteredUpdater = (state, {payload: filtered}) => ({
  * @param {Object} state - `uiState`
  * @public
  */
-export const setExportDataUpdater = (state, action) => ({
+export const setExportDataUpdater = state => ({
   ...state,
   exportData: {
     ...state.exportData,
     data: !state.exportData.data
+  }
+});
+
+/**
+ * whether to export a mapbox access to HTML single page
+ * @param {Object} state - `uiState`
+ * @param {Object} action
+ * @param {string} action.payload
+ */
+export const setExportMapboxAccessTokenUpdater = (state, {payload: exportMapboxAccessToken}) => ({
+  ...state,
+  exportHtml: {
+    ...state.exportHtml,
+    exportMapboxAccessToken
   }
 });
 
